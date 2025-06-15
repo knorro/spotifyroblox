@@ -30,10 +30,15 @@ async function uploadToRoblox(imageBuffer) {
   console.log("📤 Upload naar Roblox wordt gestart...");
 
   const formData = new FormData();
-  formData.append("fileContent", imageBuffer, {
-    filename: "album.jpg",
-    contentType: "image/jpeg",
-  });
+ formData.append("fileContent", imageBuffer, {
+  filename: "album.jpg",
+  contentType: "image/jpeg",
+});
+formData.append("assetType", "Image");
+formData.append("name", "Album Cover");
+formData.append("description", "Uploaded via API");
+formData.append("creatorType", "Group"); // Of "User" als het geen groep is
+formData.append("creatorTargetId", CREATOR_ID);
 
   const headers = {
     "x-api-key": ROBLOX_API_KEY,
