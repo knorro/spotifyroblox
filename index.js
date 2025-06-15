@@ -30,7 +30,7 @@ async function uploadToRoblox(imageBuffer) {
   console.log("📤 Upload naar Roblox wordt gestart...");
 
   const formData = new FormData();
-  formData.append("file", imageBuffer, {
+  formData.append("fileContent", imageBuffer, {
     filename: "album.jpg",
     contentType: "image/jpeg",
   });
