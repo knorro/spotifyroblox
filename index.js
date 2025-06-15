@@ -31,7 +31,6 @@ async function uploadToRoblox(imageBuffer) {
 
   const formData = new FormData();
  formData.append("fileContent", imageBuffer, {
-  filename: "album.jpg",
   contentType: "image/jpeg",
 });
 formData.append("assetType", "Image");
