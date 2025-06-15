@@ -20,12 +20,12 @@ async function uploadToRoblox(imageBuffer) {
     filename: "album.jpg",
     contentType: "image/jpeg",
   });
-
-  const res = await fetch(`https://apis.roblox.com/assets/v1/assets/upload`, {
+  
+ const res = await fetch("https://apis.roblox.com/assets/v1/assets/upload", {
     method: "POST",
     headers: {
       "x-api-key": ROBLOX_API_KEY,
-      // formData sets Content-Type including boundary automatically
+      ...formData.getHeaders(), // ← belangrijk!
     },
     body: formData,
   });
