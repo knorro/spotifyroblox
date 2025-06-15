@@ -43,7 +43,7 @@ async function uploadToRoblox(imageBuffer) {
   console.log("🧪 Headers:", headers);
   console.log("🧪 Form bevat:", formData.getLengthSync(), "bytes");
 
-  const res = await fetch("https://apis.roblox.com/assets/v1/assets/upload", {
+  const res = await fetch("https://apis.roblox.com/assets/v1/assets", {
     method: "POST",
     headers,
     body: formData,
